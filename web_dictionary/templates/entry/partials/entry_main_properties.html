@@ -1,0 +1,11 @@
+{% if properties.senses %}
+<div class="main-properties-container">
+    <ol class="senses">
+        {% for sense in properties.senses %}
+            <li>
+                {% include 'entry/partials/entry_sense.html' with sense=sense %}
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endif %}

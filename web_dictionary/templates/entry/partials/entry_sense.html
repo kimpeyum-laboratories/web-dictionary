@@ -1,0 +1,16 @@
+<div class="sense-container">
+    <ul class="definitions">
+        {% for definition in senses.definitions %}
+            <li>
+                {% include 'entry/partials/entry_definition.html' with definition=definition %}
+            </li>
+        {% endfor %}
+    </ul>
+    <ul class="examples">
+        {% for example in senses.examples %}
+            <li>
+                {% include 'entry/partials/entry_example.html' with example=example %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
