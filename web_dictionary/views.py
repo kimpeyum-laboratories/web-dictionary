@@ -6,28 +6,9 @@ from .models import ObjectNode
 # Create your views here.
 
 
-class EntryView(DetailView):
+class EntryView(ListView):
     model = ObjectNode
     template_name = "entry/entry.html"
-    context_object_name = "entry"
-
-    def get_object(self, queryset=None):
-        entry_id = self.kwargs.get("entry_id")
-        return get_object_or_404(ObjectNode, uuid=entry_id)
-
-
-class EntryWhatLinksHereView(EntryView):
-    template_name = "entry/what_links_here.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["in_rels"] = self.object.in_rels.all()
-        return context
-
-
-class ResourceView(ListView):
-    model = ObjectNode
-    template_name = "entry/resource.html"
     context_object_name = "entries"
 
     def get_queryset(self):

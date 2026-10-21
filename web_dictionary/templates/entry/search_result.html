@@ -4,9 +4,9 @@
 
 {% block content %}
     <div class="results">
-        <div class="search-results-container">
+        <div class="search-result-container">
             {% for result in results %}
-                {% include 'entry/partials/entry/partials/result.html' with result=result %}
+                {% include 'entry/partials/entry/partials/search_result_option.html' with result=result %}
             {% endfor %}
         </div>
     </div>
