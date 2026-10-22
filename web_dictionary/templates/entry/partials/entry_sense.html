@@ -1,13 +1,14 @@
 <div class="sense-container">
+    <h2>{{ sense.part_of_speech }}</h2>
     <ul class="definitions">
-        {% for definition in senses.definitions %}
+        {% for definition in sense.definitions %}
             <li>
                 {% include 'entry/partials/entry_definition.html' with definition=definition %}
             </li>
         {% endfor %}
     </ul>
     <ul class="examples">
-        {% for example in senses.examples %}
+        {% for example in sense.examples %}
             <li>
                 {% include 'entry/partials/entry_example.html' with example=example %}
             </li>

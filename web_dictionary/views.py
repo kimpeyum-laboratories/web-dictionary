@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_list_or_404, get_object_or_404, render
-from django.views.generic import DetailView, ListView
+from django.views.generic import ListView
 from .models import ObjectNode
 
 # Create your views here.
@@ -13,7 +13,7 @@ class EntryView(ListView):
 
     def get_queryset(self):
         name = self.kwargs.get("name")
-        return ObjectNode.objects.filter(name=name)
+        return ObjectNode.objects.filter(web_slug=name)
 
 
 def search(request):
@@ -22,12 +22,12 @@ def search(request):
             "The 'query' search parameter is missing."
         )
 
-    query = request.GET.get("query", "")
-    entries = ObjectNode.objects.filter(name__icontains=query)
+    query = request.GET.get("query", "").strip().casefold()
+    results = ObjectNode.objects.filter(name__contains=query)
 
     context = {
-        "entries": entries,
+        "results": results,
         "query": query,
     }
 
-    return render(request, "search_result.html", context)
+    return render(request, "entry/search.html", context)

@@ -13,6 +13,8 @@ class ObjectNodeAdmin(admin.ModelAdmin):
 
     list_filter = ("object_type",)
 
+    prepopulated_fields = {"web_slug": ("name",)}
+
 
 @admin.register(Edge)
 class EdgeAdmin(admin.ModelAdmin):

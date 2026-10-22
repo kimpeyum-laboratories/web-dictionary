@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %} {{ name }} {% endblock %}
-
 {% block content %}
     <div class="results">
         <div class="resource-results-container">
             {% for entry in entries %}
-                <article id="{{ entry.uuid }}" class="article-container">
+                <article id="{{ entry.uuid }}" class="article">
                     <header class="entry-header" role="banner">
                         <div class="entry-header-container">
                             <h1 class="entry-header-title">

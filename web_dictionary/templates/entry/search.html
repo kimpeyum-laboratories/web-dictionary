@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="search-page-container">
+        <h3 class="search-page-title">
+            <span class="title">Palabras</span>
+            <span class="count"> {{ results|length }} </span>
+        </h3>
+        <div class="results">
+            {% for result in results %}
+                {% include 'entry/partials/search_result_option.html' with result=result %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
