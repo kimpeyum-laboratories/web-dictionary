@@ -8,9 +8,12 @@ Before starting the local development server, you must first install the project
 ```
 pip install -r requirements.txt
 ```
-Then, you shall prepare the local database by creating and applying migrations.
+Then, you shall prepare the local database by creating migrations...
 ```
 python3 manage.py makemigrations
+```
+...and applying them.
+```
 python3 manage.py migrate
 ```
 Optionally, if you need to access the Django Admin panel, you can create a superuser account.
