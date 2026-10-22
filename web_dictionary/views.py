@@ -1,21 +1,22 @@
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.shortcuts import get_list_or_404, get_object_or_404, render
+from django.shortcuts import render
+from django.views.decorators.http import require_GET
 from django.views.generic import ListView
 from .models import ObjectNode
 
-# Create your views here.
-
 
 class EntryView(ListView):
+    context_object_name = "entries"
+    http_method_names = ["get"]
     model = ObjectNode
     template_name = "entry/entry.html"
-    context_object_name = "entries"
 
     def get_queryset(self):
         name = self.kwargs.get("name")
         return ObjectNode.objects.filter(web_slug=name)
 
 
+@require_GET
 def search(request):
     if "query" not in request.GET or not request.GET.get("query").strip():
         return HttpResponseBadRequest(
