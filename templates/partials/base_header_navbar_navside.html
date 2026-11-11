@@ -1,0 +1,85 @@
+{% load static %}
+
+<style>
+    @import url("{% static 'partials/base_header_navbar_navside.css' %}");
+</style>
+
+<nav class="navbar" role="navigation">
+    <div class="navbar__container">
+        <img class="navbar-compact__image"/>
+    
+        <nav class="navbar-list">
+            <img class="navbar__image"/>
+            
+            <a class="navbar-item">Example</a>
+        </nav>
+        
+        <div class="navbar-toolbar__container">
+            <nav class="navbar-list">
+                <a class="navbar-item">Example</a>
+                <a class="navbar-item">Example</a>
+                <a class="navbar-item">Example</a>
+            </nav>
+
+            <button class="navbar-mobile__button" id="navbar-menu-button">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none" 
+                    role="img" 
+                    viewBox="0 0 18 18" 
+                    width="18" 
+                    height="18" 
+                    aria-hidden="true"
+                >
+                    <path 
+                        d="M0.75 1.25H17.25M0.75 8.25H17.25M0.75 15.25L17.25 15.25" 
+                        stroke="var(--color-primary-foreground)"
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<aside class="navside" id="navbar-menu" role="navigation">
+    <div class="navside__container">
+        <div class="navside-topbar__container navbar__container">
+            <img class="navside__image"/>
+            
+            <button class="navbar__button" id="navside-close-button">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 18 18" 
+                    width="18" 
+                    height="18" 
+                >
+                    <path 
+                        d="M1 1.50684L17 17.5068M17 1.50684L1 17.5068" 
+                        stroke="var(--color-primary-foreground)"
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <nav class="navside-list">
+            <a class="navside-item">Example</a>
+            <a class="navside-item">Example</a>
+            <a class="navside-item">Example</a>
+        </nav>
+        
+        <footer>
+            <nav class="navside-list">
+                <a class="footer-anchor">Example</a>
+            </nav>
+        </footer>
+    </div>
+</aside>
+
+<script src="{% static 'js/partials/base_header_navbar_navside.js' %}"></script>

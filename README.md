@@ -1,0 +1,1 @@
+# django-generic-project-template

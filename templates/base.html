@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+    </head>
+    
+    <body>
+        <div class="page__wrapper" id="page-wrapper">
+            <header role="banner">
+                {% include 'partials/base_header_navbar_navside.html' %}
+            </header>
+            
+            <main class="content" role="main">
+                {% block base_content %}
+                {% endblock %}
+            </main>
+            
+            <footer>
+                {% include 'partials/base_footer.html' %}
+            </footer>
+        </div>
+    </body>
+</html>
